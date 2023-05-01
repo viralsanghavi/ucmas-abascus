@@ -1,7 +1,22 @@
+import Header from "components/components/Header";
 import styles from "components/styles/Home.module.css";
 import Head from "next/head";
+import Image from "next/image";
+import {openSans} from "./_app";
+import Map from "components/components/Map";
 
 export default function Home() {
+  const timings = [
+    {day: "Mon", timing: "10:30 AM - 5:00 PM"},
+    {day: "Tue", timing: "10:00 AM - 5:00 PM"},
+    {day: "Wed", timing: "10:30 AM - 5:00 PM"},
+    {day: "Thu", timing: "10:30 AM - 5:00 PM"},
+    {day: "Fri", timing: "10:30 AM - 5:00 PM"},
+    {day: "Sat", timing: "9:00 AM - 6:00 PM"},
+    {day: "Sun", timing: "9:00 AM - 6:00 PM"},
+  ];
+  const DEFAULT_CENTER = [38.907132, -77.036546];
+
   return (
     <>
       <Head>
@@ -10,7 +25,316 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={`${styles.main}`}>UCMAS ABASCUS</main>
+      <Header />
+      <main
+        style={{
+          textAlign: "center",
+        }}
+      >
+        <div
+          style={{
+            maxWidth: "1064px",
+            margin: "80px auto",
+            padding: "16px 24px",
+          }}
+        >
+          {/* Banner */}
+          <div>
+            <h1
+              style={{
+                fontSize: 56,
+                textAlign: "center",
+                color: "#FA8C5C",
+                lineHeight: 1.2,
+                marginBottom: 24,
+              }}
+            >
+              UCMAS ABACUS CENTER-CLASSES-COURSE IN AIROLI
+            </h1>
+            <p className="helper">
+              Worlds # No.1 UCMAS Abacus Classes-Center-course-math in AIROLI,
+              NAVI MUMBAI
+            </p>
+            <p className="helper">Opening at 10:30 AM</p>
+            <div
+              style={{
+                position: "relative",
+                width: "100%",
+                minHeight: "400px",
+                height: "100%",
+                marginTop: 40,
+              }}
+            >
+              <Image
+                src="/banner.png"
+                fill
+                style={{
+                  objectFit: "contain",
+                }}
+              />
+            </div>
+          </div>
+          {/* Below Banner */}
+          <div
+            style={{
+              backgroundColor: "#F6F6F6",
+              width: "100%",
+              padding: "10%",
+              textAlign: "justify",
+              marginTop: 40,
+            }}
+          >
+            <hr
+              style={{
+                width: "48px",
+                border: "1px solid black",
+                textAlign: "center",
+                margin: "0 auto 16px",
+              }}
+            />
+            <p style={{textAlign: "center", marginBottom: 40}}>
+              BUILDING LIFELONG SKILLS FOR YOUR CHILD UCMAS
+            </p>
+            <p
+              style={{
+                fontFamily: '"Open Sans", sans-serif',
+                lineHeight: "24px",
+                fontSize: 16,
+                fontWeight: 400,
+              }}
+            >
+              <a
+                href="https://ucmasmumbai.org/"
+                target="_blank"
+                style={{
+                  color: "#1967d2",
+                  fontWeight: 700,
+                  fontFamily: '"Open Sans", sans-serif',
+                }}
+              >
+                UCMAS{" "}
+              </a>
+              <span style={{fontWeight: 700}}>Abacus course</span> for a child
+              development program based on Visual Arithmetic and Abacus that
+              boosts brainpower in children aged 4-13 years. Along with
+              strengthening math skills, the UCMAS Abacus classes approach
+              promotes whole brain development and establishes foundational
+              building blocks like memory, concentration, creativity and problem
+              solving - core skills that inspire greater confidence and success
+              in all subject areas and in life.
+            </p>
+            <p
+              style={{
+                padding: "20px 0",
+                fontFamily: '"Open Sans", sans-serif',
+                lineHeight: "24px",
+                fontSize: 16,
+                fontWeight: 400,
+              }}
+            >
+              The program equips them with the skills they need to improve
+              overall academic achievement and to confidently meet life&apos;s
+              challenges and achieve greatness. Our exciting classes and
+              energetic instructors ensure that our students have fun as they
+              learn. Since 1993, UCMAS has helped over one million children
+              around the world, discover the Genius within.
+            </p>
+            <p
+              style={{
+                fontFamily: '"Open Sans", sans-serif',
+                lineHeight: "24px",
+                fontSize: 16,
+                fontWeight: 400,
+              }}
+            >
+              SUCCESS IN ACADEMICS AND LIFE
+            </p>
+          </div>
+          {/* Gallery */}
+          <div
+            style={{
+              // width: "100%",
+              textAlign: "justify",
+              marginTop: 40,
+            }}
+          >
+            <hr
+              style={{
+                width: "48px",
+                border: "1px solid black",
+                textAlign: "center",
+                margin: "0 auto 16px",
+              }}
+            />
+            <p style={{textAlign: "center", marginBottom: 40}}>GALLERY</p>
+            <div
+              style={{
+                gap: 20,
+                gridGap: 20,
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+              }}
+            >
+              {[1, 2, 3, 4, 5, 6].map((i) => (
+                <div
+                  key={i}
+                  style={{
+                    flex: "0 0 48%",
+                    height: 320,
+                    width: "100%",
+                    position: "relative",
+                    cursor: "pointer",
+                  }}
+                >
+                  <Image
+                    fill
+                    src="/random.jpg"
+                    alt={`random_photo_${i}`}
+                    style={{width: "100%", objectFit: "contain"}}
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+          {/* COntaxt US */}
+          <div
+            style={{
+              // width: "100%",
+              textAlign: "justify",
+              marginTop: 40,
+            }}
+          >
+            <hr
+              style={{
+                width: "48px",
+                border: "1px solid black",
+                textAlign: "center",
+                margin: "0 auto 16px",
+              }}
+            />
+            <p style={{textAlign: "center", marginBottom: 40}}>CONTACT US</p>
+            <div style={{margin: "20px 0"}}>
+              <Map
+                width="800"
+                height="400"
+                style={{
+                  height: 500,
+                  width: "100%",
+                }}
+                center={DEFAULT_CENTER}
+                zoom={25}
+              >
+                {({TileLayer, Marker, Popup}) => (
+                  <>
+                    <TileLayer
+                      url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                      attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                    />
+                    <Marker position={DEFAULT_CENTER}>
+                      <Popup>
+                        A pretty CSS3 popup. <br /> Easily customizable.
+                      </Popup>
+                    </Marker>
+                  </>
+                )}
+              </Map>
+            </div>
+
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+              }}
+            >
+              <div>
+                <h3
+                  style={{
+                    marginBottom: 20,
+                    fontFamily: '"Open Sans", sans-serif',
+                    fontSize: 18,
+                    fontWeight: 700,
+                  }}
+                  className={openSans.className}
+                >
+                  Contact
+                </h3>
+                <button
+                  style={{
+                    marginBottom: 20,
+                    fontFamily: '"Open Sans", sans-serif',
+                    fontSize: 16,
+                    fontWeight: 400,
+                    padding: "16px 32px",
+                    backgroundColor: "#fa8c5c",
+                    cursor: "pointer",
+                    border: "none",
+                    color: "white",
+                  }}
+                >
+                  CALL NOW
+                </button>
+                <p className={openSans.className}>087798 40005</p>
+                <p className={openSans.className}>092235 20153</p>
+              </div>
+              <div>
+                <h3
+                  style={{
+                    marginBottom: 20,
+                    fontFamily: '"Open Sans", sans-serif',
+                    fontSize: 18,
+                    fontWeight: 700,
+                  }}
+                  className={openSans.className}
+                >
+                  Address
+                </h3>
+                <button
+                  style={{
+                    marginBottom: 20,
+                    fontFamily: '"Open Sans", sans-serif',
+                    fontSize: 16,
+                    fontWeight: 400,
+                    padding: "16px 32px",
+                    backgroundColor: "#fa8c5c",
+                    cursor: "pointer",
+                    border: "none",
+                    color: "white",
+                  }}
+                >
+                  GET DIRECTIONS
+                </button>
+                <p style={{maxWidth: "80%"}} className={openSans.className}>
+                  Shop Number 4 & 5, Whispering Palms near Union Bank Sector-19,
+                  Airoli Navi Mumbai, Maharashtra 400708 India
+                </p>
+                <p className={openSans.className}>092235 20153</p>
+              </div>
+              <div>
+                <dl>
+                  <dt style={{marginBottom: 20}}>
+                    <b
+                      style={{
+                        fontFamily: '"Open Sans", sans-serif',
+                        fontSize: 18,
+                        fontWeight: 700,
+                      }}
+                      className={openSans.className}
+                    >
+                      Business Hours
+                    </b>
+                  </dt>
+                  {timings.map(({day, timing}) => (
+                    <dd key={day} className={openSans.className}>
+                      {day}: {timing}
+                    </dd>
+                  ))}
+                </dl>
+              </div>
+            </div>
+          </div>
+          <hr style={{marginTop: 40}} />
+        </div>
+      </main>
     </>
   );
 }
